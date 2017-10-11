@@ -26,6 +26,10 @@ public class Item {
 	@Override 
 	public String toString() {
 		return "Name: " + this.name + "\nPrice: " + this.price + "\nQuantity: " + this.quantity;
+	}
+
+	public void setQuantity(int newQuantity) {
+		this.quantity = newQuantity;
 	}	
 
 }

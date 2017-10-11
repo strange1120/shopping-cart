@@ -5,6 +5,7 @@ public class ShopApp {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		Order cartItems = new Order();
+		Item item = new Item(null, 0, 0);
 
 		System.out.println("Welcome to the Strange MarketPlace!");
 		String selection = "";
@@ -30,11 +31,14 @@ public class ShopApp {
 		while (selection.equalsIgnoreCase("y")) {
 			System.out.println("Enter the name of the item you would like to remove");
 			String nameRemove = input.nextLine();
-			System.out.println("You have removed " + nameRemove);
-			cartItems.removeItem(nameRemove);
+			System.out.println("How many of " + nameRemove + " would you like to remove?");
+			int quantityRemove = input.nextInt();
+			System.out.println("You have removed " + quantityRemove + "  " + nameRemove);
+			cartItems.changeQuantity(nameRemove, quantityRemove);
 			currentCart(cartItems);
 			System.out.println("Would you like to remove anything else? (y/n)");
-			selection = input.nextLine();
+			input.nextLine();
+			selection=input.nextLine();
 			finalCart(cartItems, selection);
 		}
 	}
