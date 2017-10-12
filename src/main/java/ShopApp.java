@@ -5,7 +5,6 @@ public class ShopApp {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		Order cartItems = new Order();
-		Item item = new Item(null, 0, 0);
 
 		System.out.println("Welcome to the Strange MarketPlace!");
 		String selection = "";
@@ -19,7 +18,6 @@ public class ShopApp {
 			System.out.println("Enter the quantity: ");
 			int quantity = input.nextInt();
 			input.nextLine();
-
 			cartItems.addItem(new Item(name, price, quantity));
 			currentCart(cartItems);
 			System.out.println("Continue shopping? (y/n)");
